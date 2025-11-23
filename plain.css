@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
-.main-header{
-    color: blue
-    
+:root {
+    font-size: 16px; 
+    --primary-blue: #0077c9;
+    --accent-red: #ff3366;
+    --dark-text: #2c3e50;
+    --background-color: #f4f6f8;
+    --card-bg: white;
 }
 body {
     font-family: 'Poppins', sans-serif;
@@ -33,6 +37,7 @@ a { text-decoration: none; }
     padding: 0.5rem 0.8rem;
     font-weight: 600;
     transition: color 0.3s ease; 
+    color: white
 }
 .main-nav a:hover {
     color: red;
@@ -61,7 +66,14 @@ a { text-decoration: none; }
     animation: color-shift 4s infinite alternate; 
     font-size: 3rem; 
     text-transform: uppercase;
+    color: orangered
 }
+@keyframes color-shift {
+    0%   { color: var(--accent-red); }    
+    50%  { color: var(--primary-blue); }
+    100% { color: var(--accent-red); }  
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: 1fr; 
@@ -83,6 +95,16 @@ a { text-decoration: none; }
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    animation: slide 5s;
+    width: 100%; 
+    height: auto;
+    border-radius: 0.2rem;
+    margin-bottom: 1rem;
+}
+@keyframes image-pulse {
+    0%   { transform: scale(1); }      
+    50%  { transform: scale(1.02); } 
+    100% { transform: scale(1); }
 }
 .project-card {
     border: 1px solid #ddd;
